@@ -1,0 +1,10 @@
+version: '3'
+services:
+  dev-env:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - .env
+    ports:
+      - "${DEV_PORT:-8080}:8080"
