@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head title="debug">
+    <title>Debug</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div>
+    <h1>Debug</h1>
+    <button id="add-bt">refresh img</button>
+  </div>
+  <div id="my-content">
+
+  </div>
+    <script>
+        const button = document.getElementById('add-bt');
+        const content = document.getElementById('my-content');
+        button.addEventListener('click', () => {
+          content.innerHTML = '';
+          const img = document.createElement('img');
+          img.src = 'http://localhost:8080/image?src=image-1.jpg&w=800&fit=cover&q=50&type=auto';
+          img.loading = 'lazy';
+          img.alt = 'debug';
+          content.prepend(img);
+        });
+    </script>
+</body>
